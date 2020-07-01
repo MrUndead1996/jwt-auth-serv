@@ -17,7 +17,7 @@ func init() {
 }
 
 func main() {
-	port := os.Getenv("PORT")
+	port := ":" + os.Getenv("PORT")
 	log.Print(port)
 	flag.Parse()
 	config := authServer.NewConfig(port)
