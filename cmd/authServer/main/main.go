@@ -5,6 +5,7 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/MrUndead1996/jwt-auth-serv/internal/app/authServer"
 	"log"
+	"os"
 )
 
 var (
@@ -16,8 +17,9 @@ func init() {
 }
 
 func main() {
+	port := os.Getenv("PORT")
 	flag.Parse()
-	config := authServer.NewConfig()
+	config := authServer.NewConfig(port)
 	_, err := toml.DecodeFile(configPath, config)
 	if err != nil {
 		log.Fatal(err)

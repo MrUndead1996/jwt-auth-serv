@@ -6,7 +6,9 @@ import (
 	"github.com/MrUndead1996/jwt-auth-serv/internal/dataAccess"
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
+	"net"
 	"net/http"
+	"os"
 )
 //Server for authorization by JWT, to use call func New(config *Config).
 type AuthServer struct {

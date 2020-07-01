@@ -3,14 +3,14 @@ package authServer
 import "github.com/MrUndead1996/jwt-auth-serv/internal/dataAccess"
 
 type Config struct {
-	Port     string `toml:"host"`
+	Port string
 	LogLevel string `toml:"log_level"`
 	Database *dataAccess.Config
 }
 
-func NewConfig() *Config {
+func NewConfig(port string) *Config {
 	return &Config{
-		Port:     ":",
+		Port: port,
 		LogLevel: "debug",
 		Database: dataAccess.NewConfig(),
 	}
