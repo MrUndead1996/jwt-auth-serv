@@ -18,6 +18,7 @@ func init() {
 
 func main() {
 	port := os.Getenv("PORT")
+	log.Print(port)
 	flag.Parse()
 	config := authServer.NewConfig(port)
 	_, err := toml.DecodeFile(configPath, config)
